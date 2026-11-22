@@ -15,7 +15,7 @@ primary_region = "cdg"
   protocol = "tcp"
 
   # إيقاف فحوصات HTTP لأن هذه الخدمة SSH (ليست ويب)
-  http_checks = false
+  http_checks = []
 
   [[services.ports]]
     # المنفذ الذي يتصل به العملاء من خارج Fly.io
@@ -24,4 +24,4 @@ primary_region = "cdg"
   [[services.tcp_checks]]
     interval = "10s"
     timeout = "2s"
-    restart_limit = 0
+    restart_limit = 3
