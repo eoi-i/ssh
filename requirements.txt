@@ -1,0 +1,10 @@
+# Python dependencies for the hardened OpenSSH terminal service.
+#
+# main.py uses only the Python standard library
+# (os, pwd, shutil, subprocess, sys, pathlib), so there are no
+# third-party packages to install. This file exists so that
+# deployment tooling that requires a requirements.txt (Fly.io,
+# pip, CI) can find one.
+#
+# To add a dependency, list it here with a pinned version, e.g.:
+#   requests==2.32.3

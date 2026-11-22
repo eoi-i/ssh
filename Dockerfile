@@ -29,6 +29,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     && mkdir -p /run/sshd
 
 WORKDIR /opt/terminal
+COPY requirements.txt /opt/terminal/requirements.txt
 COPY main.py /opt/terminal/main.py
 RUN chmod 755 /opt/terminal/main.py
 
