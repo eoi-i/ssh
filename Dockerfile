@@ -16,6 +16,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     procps \
     iproute2 \
     iputils-ping \
+    netcat-openbsd \
     curl \
     wget \
     nano \
@@ -35,4 +36,8 @@ RUN chmod 755 /opt/terminal/main.py
 
 EXPOSE 2222
 STOPSIGNAL SIGTERM
+
+HEALTHCHECK --interval=15s --timeout=5s --start-period=60s --retries=3 \
+    CMD nc -z 127.0.0.1 2222 || exit 1
+
 CMD ["python3", "/opt/terminal/main.py"]
