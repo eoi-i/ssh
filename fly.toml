@@ -1,9 +1,6 @@
 app = "ssh-8zjrsa"
 primary_region = "ams"
 
-[build]
-  dockerfile = "Dockerfile"
-
 [env]
   PYTHONUNBUFFERED = "1"
 
