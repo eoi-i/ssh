@@ -1,24 +1,12 @@
 app = "ssh-8zjrsa"
 primary_region = "ams"
 
-[env]
-  PYTHONUNBUFFERED = "1"
-
-[experimental]
-  auto_rollback = true
+[build]
+  dockerfile = "Dockerfile"
 
 [[services]]
   internal_port = 2222
   protocol = "tcp"
 
-  # إيقاف فحوصات HTTP لأن هذه الخدمة SSH (ليست ويب)
-  http_checks = []
-
   [[services.ports]]
-    # المنفذ الذي يتصل به العملاء من خارج Fly.io
     port = 2222
-
-  [[services.tcp_checks]]
-    interval = "10s"
-    timeout = "2s"
-    restart_limit = 3
